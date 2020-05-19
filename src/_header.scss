@@ -1,0 +1,18 @@
+header { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1%;
+}
+
+.site-name {
+  /* background: grey; */
+  color: pink;
+  text-align: center;
+  width: 100%;
+}
+.site-name img {
+  width: 500px;
+}
