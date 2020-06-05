@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-<h1><?php echo single_cat_title(); ?></h1>
+<main class="basic-page">
+  <?php get_template_part('template-parts/section','archive'); ?>
 
-<?php get_template_part('template-parts/section','archive'); ?>
-
-<?php previous_posts_link(); ?>
-<?php next_posts_link(); ?>
+  <?php previous_posts_link(); ?>
+  <?php next_posts_link(); ?>
+</main>
 
 <?php get_footer(); ?>

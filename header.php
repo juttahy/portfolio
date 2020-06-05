@@ -14,7 +14,7 @@
     
     <header>
       <div class="site-name">
-        <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/jh_logo.svg" alt="Jutta Hyrskylahti logo"></a>
+        <a href="#">Jutta Hyrskylahti</a>
       </div>
       <div class="menu">
         <div class="navigation">

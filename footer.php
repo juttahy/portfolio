@@ -2,14 +2,21 @@
 </div>
 
 <footer>
-    <div class="pink-to-right-bottom">
-      <div class="footer-content">
-        <div class="form-container">
+  <div class="footer-background"> 
+    <div class="footer-container">
+      <?php dynamic_sidebar( 'footer_area_one' ); ?>
+      <?php dynamic_sidebar( 'footer_area_two' ); ?>
+    </div>
+      <?php dynamic_sidebar( 'footer_area_three' ); ?>
+  </div>
+   <!-- <div class="footer-background">
+      <div class="footer-container">
+        <div class="footer-content-one">
               <h2>Send me a message</h2>
               <p>lomake</p>
               <input type="submit" value="Send message" class="btn-pink">
         </div>
-        <div class="contact-container">
+        <div class="footer-content-two">
           <h2>Contact me</h2>
           <p>
             <a href="#">
@@ -29,8 +36,8 @@
         </div> 
       </div>
       <div class="copyright">&copy; Jutta Hyrskylahti 2020</div>
-    </div>
-  </footer>
+    </div> -->
+</footer>
 
 <!-- brings scripts and hooks and other wordpress functionalities needed that are loaded at the bottom -->
 <?php wp_footer(); ?>  

@@ -102,8 +102,8 @@ var registerBlockType = wp.blocks.registerBlockType;
 var _wp$blockEditor = wp.blockEditor,
     RichText = _wp$blockEditor.RichText,
     InspectorControls = _wp$blockEditor.InspectorControls,
-    ColorPalette = _wp$blockEditor.ColorPalette,
-    MediaUpload = _wp$blockEditor.MediaUpload;
+    MediaUpload = _wp$blockEditor.MediaUpload,
+    PlainText = _wp$blockEditor.PlainText;
 var _wp$components = wp.components,
     PanelBody = _wp$components.PanelBody,
     IconButton = _wp$components.IconButton;
@@ -117,17 +117,8 @@ registerBlockType('jhy/custom-title', {
   attributes: {
     title: {
       type: 'string',
-      source: 'html',
-      selector: 'h2'
-    },
-    titleColor: {
-      type: 'string',
-      default: '#ffffff'
-    },
-    body: {
-      type: 'string',
-      source: 'html',
-      selector: 'p'
+      source: 'text',
+      selector: 'h1'
     },
     titleImage: {
       type: 'string',
@@ -139,25 +130,11 @@ registerBlockType('jhy/custom-title', {
     var attributes = _ref.attributes,
         setAttributes = _ref.setAttributes;
     var title = attributes.title,
-        body = attributes.body,
-        titleColor = attributes.titleColor,
         titleImage = attributes.titleImage; // custom functions
 
     function onChangeTitle(newTitle) {
       setAttributes({
         title: newTitle
-      });
-    }
-
-    function onChangeBody(newBody) {
-      setAttributes({
-        body: newBody
-      });
-    }
-
-    function onTitleColorChange(newColor) {
-      setAttributes({
-        titleColor: newColor
       });
     }
 
@@ -172,11 +149,6 @@ registerBlockType('jhy/custom-title', {
         marginBottom: '40px'
       }
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
-      title: 'Font Color Settings'
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "Select Title Color:")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ColorPalette, {
-      value: titleColor,
-      onChange: onTitleColorChange
-    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
       title: 'Image Settings'
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "Select Title Image:")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(MediaUpload, {
       onSelect: onSelectImage,
@@ -190,54 +162,35 @@ registerBlockType('jhy/custom-title', {
           className: "editor-media-placeholder__button is-button is-default is-large"
         }, "Title Image");
       }
-    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      class: "title-container"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      class: "title-container__img"
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("figure", {
+      className: "wp-block-jhy-custom-title__img"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
       src: titleImage,
       alt: "Title image"
     })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      class: "title-container__text"
+      className: "wp-block-jhy-custom-title__text"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
       key: "editable",
-      tagName: "h2",
+      tagName: "h1",
       placeholder: "Your Title Text",
       value: title,
-      onChange: onChangeTitle,
-      style: {
-        color: titleColor
-      }
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
-      key: "editable",
-      tagName: "p",
-      placeholder: "Your paragraph Text",
-      value: body,
-      onChange: onChangeBody
+      onChange: onChangeTitle
     })))];
   },
   save: function save(_ref3) {
     var attributes = _ref3.attributes;
     var title = attributes.title,
-        body = attributes.body,
-        titleColor = attributes.titleColor,
         titleImage = attributes.titleImage;
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      class: "title-container"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      class: "title-container__img"
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("figure", {
+      className: "wp-block-jhy-custom-title__img"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
       src: titleImage,
       alt: "Title image"
     })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      class: "title-container__text"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h1", {
-      style: {
-        color: titleColor
-      }
-    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
-      tagName: "p",
-      value: body
+      className: "wp-block-jhy-custom-title__text"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      tagName: "h1",
+      value: title
     })));
   }
 });
