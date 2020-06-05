@@ -1,8 +1,63 @@
 $white: #ffffff;
+$white-transparent: rgba(255,255,255,0.6);
 $black: #191919;
+$dark-grey: #343334;
+$grey: #747474;
+$light-grey: #949494;
 $yellow: #c69c39;
+$yellow-transparent: rgba(198,156,57,0.7);
 $green: #3e402f;
+$burgundy: #5f2537;
 
 $light-pink: #e082b9;
 $medium-pink: #f82eae;
 $dark-pink: #da2f7c;
+$dark-pink-transparent: rgba(218,47,124,0.7);
+
+/*---------------------------------------------------------
+Custom Color palettes 
+-----------------------------------------------------*/
+.has-yellow-background-color {
+  background-color: $yellow;
+}
+.has-yellow-color {
+  color: $yellow;
+}
+.has-dark-pink-background-color {
+  background-color: $dark-pink;
+}
+.has-dark-pink-color {
+  color: $dark-pink;
+}
+.has-light-pink-background-color {
+  background-color: $light-pink;
+}
+.has-light-pink-color {
+  color: $light-pink;
+}
+.has-black-background-color {
+  background-color: $black;
+}
+.has-black-color {
+  color: $black;
+}
+.has-grey-background-color {
+  background-color: $grey;
+}
+.has-grey-color {
+  color: $grey;
+}
+.has-dark-green-background-color {
+  background-color: $green;
+}
+.has-dark-green-color {
+  color: $green;
+}
+.has-white-background-color {
+  background-color: $white;
+}
+.has-white-color {
+  color: $white;
+}
+
+

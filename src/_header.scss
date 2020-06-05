@@ -4,15 +4,41 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1%;
+  padding: 0;
+  margin-bottom: 4rem;
 }
 
 .site-name {
-  /* background: grey; */
   color: pink;
   text-align: center;
   width: 100%;
+  font-family: 'Knewave', cursive;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  a {
+    color: $dark-grey;
+    text-decoration: none;
+  }
+  @include phone-landscape-up {
+    padding: 1rem;
+  }
+  @include tablet-portrait-up {
+    font-size: 4rem;
+  }
 }
 .site-name img {
-  width: 500px;
+  width: 100px;
+
+  @include phone-landscape-up {
+    width: 200px;
+  }
+  @include tablet-portrait-up {
+    width: 300px;
+  }
+  @include tablet-landscape-up {
+    width: 300px;
+  }
+  @include desktop-up {
+    width: 100px;
+  }
 }

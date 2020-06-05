@@ -29,6 +29,8 @@ body {
   /* font-family: 'Raleway', sans-serif; */
   font-family: 'Quicksand', sans-serif;
   font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
 }
 
 .container {
@@ -38,25 +40,36 @@ body {
 h1 {
   /* font-family: 'Quicksand', sans-serif; */
   /* font-family: 'Raleway', sans-serif; */
-  font-family: 'Montserrat', sans-serif;
-  font-weight: extra-bold;
-  font-size: 2.1rem;
+  /*font-family: 'Montserrat', sans-serif;
+  font-weight: extra-bold;*/
+  font-size: 1.7rem;
+  line-height: 2rem;
+
+  @include tablet-portrait-up {
+    font-size: 2.1rem;
+    line-height: 2.6rem;
+  }
 }
 
 h2 {
-  margin-bottom: 16px;
+  margin: 32px 0 32px 0;
   font-weight: 500;
 }
 
+h3 {
+  margin: 0 0 16px 0;
+}
+
 p {
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 a {
   text-decoration: none;
-  color: #45a689;
+  color: $medium-pink;
+  &:hover, &:focus {
+    color: $light-pink;
+  }
 }
 /* a:hover, a:focus {
   text-decoration: underline;
@@ -71,23 +84,32 @@ a .work-sample-content:hover {
   border: #f14995 solid 6px;
 }
 
-.btn-pink {
-  display: block;
-  margin-top: 32px;
-  padding: 0.5rem 1rem;
-  /* background-color: #48493c; */
-  /* background-color: #c69c39; */
-  background-color: #da2f7c;
-  color: #ffffff;
-  border-radius: 5px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  border: none;
-  border: #ffffff solid 1px; 
-  cursor: pointer;
-  transition: all 0.2s;
+.btn-pink, .btn-pink-readmore {
+  @include cta-button;
 }
-.btn-pink:hover, .btn-pink:focus {
-  /* background-color: #74103d; */
-  background-color: #f82eae;
+.btn-pink-readmore {
+  display: inline;
+  padding: 0.4rem 0.8rem;
+}
+
+
+.center-text-mb {
+  text-align: center;
+  @include tablet-portrait-up {
+    text-align: left;
+  }
+}
+
+.page-title {
+  @include inner-container;
+  padding: 0 0 3rem 0;
+  @include main-title;
+  
+  @include tablet-portrait-up {
+    padding: 0 0 5rem 0; 
+  }
+}
+
+.basic-page {
+  padding: 5rem 0 0 0;
 }

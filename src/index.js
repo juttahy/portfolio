@@ -1,5 +1,5 @@
 const { registerBlockType } = wp.blocks;
-const { RichText, InspectorControls, ColorPalette, MediaUpload } = wp.blockEditor;
+const { RichText, InspectorControls, MediaUpload, PlainText } = wp.blockEditor;
 const { PanelBody, IconButton } = wp.components;
 
 registerBlockType('jhy/custom-title', {
@@ -14,17 +14,8 @@ registerBlockType('jhy/custom-title', {
   attributes: {
     title: {
       type: 'string', 
-      source: 'html',
-      selector: 'h2'
-    },
-    titleColor: {
-      type: 'string',
-      default: '#ffffff'
-    },
-    body: {
-      type: 'string',
-      source: 'html',
-      selector: 'p'
+      source: 'text',
+      selector: 'h1'
     },
     titleImage: {
       type: 'string',
@@ -37,17 +28,11 @@ registerBlockType('jhy/custom-title', {
   // built-in functions
   edit({ attributes, setAttributes }) {
 
-    const { title, body, titleColor, titleImage } = attributes;
+    const { title, titleImage } = attributes;
 
     // custom functions
     function onChangeTitle(newTitle) {
       setAttributes( { title: newTitle } );
-    }
-    function onChangeBody(newBody) {
-      setAttributes( { body: newBody } );
-    }
-    function onTitleColorChange(newColor) {
-      setAttributes( { titleColor: newColor } );
     }
     function onSelectImage(newImage) {
       setAttributes( { titleImage: newImage.sizes.full.url } )
@@ -55,11 +40,6 @@ registerBlockType('jhy/custom-title', {
 
     return ([
       <InspectorControls style={{ marginBottom: '40px' }}>
-        <PanelBody title={ 'Font Color Settings' }>
-          <p><strong>Select Title Color:</strong></p>
-          <ColorPalette value={ titleColor }
-                        onChange={ onTitleColorChange } />
-        </PanelBody>
         <PanelBody title={ 'Image Settings' }>
           <p><strong>Select Title Image:</strong></p>
           <MediaUpload 
@@ -76,23 +56,18 @@ registerBlockType('jhy/custom-title', {
                 ) } />
         </PanelBody>
       </InspectorControls>,
-      <div class="title-container">
-        <div class="title-container__img">
-          <img src={titleImage} alt="Title image"/>
-        </div>
-        <div class="title-container__text">
+      <div>
+        <figure className="wp-block-jhy-custom-title__img">
+          <img src={titleImage} alt="Title image"></img>
+        </figure>
+        <div className="wp-block-jhy-custom-title__text">
           <RichText key="editable"
-                    tagName="h2"
+                    tagName="h1"
                     placeholder="Your Title Text"
                     value={ title }
                     onChange={ onChangeTitle } 
-                    style={{ color: titleColor }}
                     />
-          <RichText key="editable"
-                    tagName="p"
-                    placeholder="Your paragraph Text"
-                    value={ body }
-                    onChange={ onChangeBody } />
+          
         </div>
       </div>
     ]);
@@ -100,17 +75,18 @@ registerBlockType('jhy/custom-title', {
 
   save({ attributes }) {
 
-    const { title, body, titleColor, titleImage } = attributes;
+    const { title, titleImage } = attributes;
 
     return (
-      <div class="title-container">
-        <div class="title-container__img">
-          <img src={titleImage} alt="Title image"/>
-        </div>
-        <div class="title-container__text">
-          <h1 style={{ color: titleColor }}>{ title }</h1>
-          <RichText.Content tagName="p"
-                          value={ body } />
+      <div>
+        <figure className="wp-block-jhy-custom-title__img">
+          <img src={titleImage} alt="Title image"></img>
+        </figure>
+        <div className="wp-block-jhy-custom-title__text">
+          
+          <RichText.Content tagName="h1"
+                            value={ title } />
+      
         </div>
       </div>
     );

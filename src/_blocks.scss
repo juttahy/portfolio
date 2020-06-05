@@ -2,96 +2,51 @@
 
 /* buttons */
 .wp-block-button__link {
-  background-color: $dark-pink;
-  border: $white solid 1px;
-  border-radius: 5px; 
-  margin-top: 32px;
-  text-transform: uppercase;
-
-  &:hover, &:focus {
-    background-color: $medium-pink;
-  }
+  @include cta-button;
 }
-
-/* Title block = media + text block */ 
-/* .wp-block-media-text {
-  margin: 0 auto;
-  width: 60%;
-}
-.wp-block-media-text__content {
-  .has-large-font-size {
-    color: $white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 2.1rem;
+.btn-secondary {
+  .wp-block-button__link {
+    @include cta-button;
+    &:link, &:visited {
+      background-color: $grey;
+    }
+    &:hover, &:active {
+      background-color: $light-grey;
+    }  
   }
-} */
+} 
+
 
 /* Group blocks with custom background styles */
 
 /* group block wider at right side */
 .wider-at-right {
-  background-color: $black;
-  color: $white;
-  position: relative;
-  /* z-index: 2; */
-  z-index: 3;
+  @include wider-at-right-bg;
 }
-.wider-at-right::before, .wider-at-right::after {
-  background: inherit;
-  content: '';
-  display: block;
-  height: 50%;
-  left: 0; 
-  position: absolute;
-  right: 0;
-  /* z-index: -1; */
-  z-index: -1;
-} 
-.wider-at-right::before {
-  top: 0;
-  transform: skewY(-3deg);
-  transform-origin: 0;
-}
-.wider-at-right::after {
-  bottom: 0;
-  transform: skewY(3deg);
-  transform-origin: 0;
+/* group block wider at right side at the top, bottom is straight */
+.wider-at-right--top {
+  @include wider-at-right-bg--top;
 }
 
 /* group block wider at left side */
 .wider-at-left {
-  background-color: $yellow;
-  position: relative;
-  z-index: 2;
+  @include wider-at-left-bg;
 }
-.wider-at-left::after {
-  background: inherit;
-  content: '';
-  display: block;
-  height: 50%;
-  left: 0;
-  position: absolute;
-  right: 0;
-  z-index: -1;
-  bottom: 0;
-  transform: skewY(-3deg);
-  transform-origin: 100%;
-}
+
 /*  Group block inner container */
-.wider-at-right .wp-block-group__inner-container, .wider-at-left .wp-block-group__inner-container {
-  margin: 0 auto;
-  width: 60%;
-  padding: 4rem 0;
-} 
-.wider-at-left .wp-block-group__inner-container {
-  padding: 6rem 0 4rem 0;
+.wider-at-right .wp-block-group__inner-container, .wider-at-right--top .wp-block-group__inner-container, .wider-at-left .wp-block-group__inner-container {
+  @include inner-container;
 } 
 
 /* Latest posts list block  */
 .wp-block-latest-posts__list {
   display: flex;
   margin: 0 -0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include tablet-portrait-up {
+    justify-content: start;
+  }
 
   li {
     margin: 0.6rem;
@@ -100,6 +55,17 @@
       img {
         opacity: 1;
         border-radius: 5px;
+        width: 300px;
+        
+        @include tablet-portrait-up {
+          width: 200px;
+        }
+        @include tablet-landscape-up {
+          width: 250px;
+        }
+        @include desktop-up {
+          width: 300px;
+        }
       }
     } 
     a {
@@ -131,21 +97,57 @@
   background-size: cover;
 }
 
+/* custom styling for 2-column layout */
+.wp-block-columns {
+  /* background-color: $burgundy; */
+  background-color: $dark-pink;
+  color: $white;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+/* CV's About me media & text block */
+.about-me {
+  grid-template-columns: 1fr 2fr;
+}
+
 /* my custom title block */
 
-.title-container {
+.wp-block-jhy-custom-title {
+  /* margin: 0 auto;
+  width: 60%;
+  padding: 4rem 0; */
+  @include inner-container;
   display: flex;
   justify-content: center;
   align-items: center; 
-  flex-direction: row;
+  flex-direction: column;
+  margin-bottom: 5rem;
+
+  @include tablet-portrait-up {
+    flex-direction: row;
+    /* align-items: flex-start;*/
+  }
 
   &__img img {
     width: 200px;
     border-radius: 100%;
   }
   &__text {
+   /* @include main-title; */
+    margin: 5% 0 0 0; 
     color: $white;
-    margin-left: 5%;
-    text-shadow: 1px 1px black, 1px 1px black, 1px 1px black, 1px 1px black;
+    font-family: 'Montserrat', sans-serif;
+  font-weight: extra-bold;
+  font-size: 1.7rem;
+    text-align: center;
+    text-shadow: 1px 1px black, 1px 1px black, 1px 1px black, 1px 1px black; 
+
+    @include tablet-portrait-up {
+      margin: 0 0 0 5%;
+      text-align: left;
+    }    
   }
+
 }
+
