@@ -2,7 +2,7 @@
 
 function scripts() {
   
-  wp_enqueue_style('wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,800|Quicksand:300,400&display=swap', false); 
+  wp_enqueue_style('wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Knewave&family=Montserrat:wght@700;800;900&family=Quicksand:wght@300;400;600;700&display=swap', false); 
 
   wp_register_style('style', get_template_directory_uri() . '/style.css', array(), false, 'all');
   wp_enqueue_style('style');
@@ -56,8 +56,8 @@ register_nav_menus(
 function wcs_auto_link_post_thumbnails( $html, $post_id, $post_image_id ) {
   $html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_the_title( $post_id ) ) . '">' . $html . '</a>';
   return $html;
-  }
-  add_filter( 'post_thumbnail_html', 'wcs_auto_link_post_thumbnails', 10, 3 );
+}
+add_filter( 'post_thumbnail_html', 'wcs_auto_link_post_thumbnails', 10, 3 );
 
 
 /* Add widget areas for footer */
