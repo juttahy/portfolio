@@ -1,0 +1,31 @@
+.blog-post {
+  @include wider-at-right-bg;
+
+  &__inner {
+    @include inner-container;
+  }
+}
+
+.blog-post--links {
+  @include wider-at-left-bg--top;
+
+  &__inner {
+    @include inner-container;
+    
+    &__excerpt {
+      display: flex;
+      flex-direction: column;
+
+      @include tablet-portrait-up {
+        flex-direction: row;
+        
+      }
+    }
+  }
+}
+
+.blog-excerpt-text {
+  @include tablet-portrait-up { 
+    margin-left: 2rem;
+  }
+}
