@@ -6,7 +6,7 @@
 }
 
 .footer-container {
-  @include inner-container;
+  @include inner-container--wide;
   padding: 2rem 0;
 
   @include tablet-portrait-up {

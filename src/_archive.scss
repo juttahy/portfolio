@@ -9,16 +9,26 @@
   }
   &:nth-child(even) {
     @include wider-at-left-bg;
+    padding: 7rem 0 7rem 0;
+  }
+  /*&:last-child {
+    @include wider-at-right-bg--top;
+  }*/
+  &:last-child:nth-child(odd) {
+    @include wider-at-right-bg--top;
+  }
+  &:last-child:nth-child(even) {
+    @include wider-at-left-bg--top;
   }
 
   &__inner {
     @include inner-container;
-    display: flex;
+    /*display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;*/
 
     @include tablet-portrait-up {
-      flex-direction: row;
+      /*flex-direction: row;*/
     }
   }
   /* &:nth-child(even) .archive-container__inner {
@@ -29,11 +39,11 @@
 
 }
 
-.archive-post-text {
+/* .archive-post-text {
   padding: 2rem 0 0 0;
   @include tablet-portrait-up {
     padding: 0 0 0 2rem;
   }
-}
+} */
 
   

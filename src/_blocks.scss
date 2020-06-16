@@ -32,11 +32,19 @@
 .wider-at-left {
   @include wider-at-left-bg;
 }
+.wider-at-left--top {
+  @include wider-at-left-bg--top;
+}
 
 /*  Group block inner container */
-.wider-at-right .wp-block-group__inner-container, .wider-at-right--top .wp-block-group__inner-container, .wider-at-left .wp-block-group__inner-container {
+.wider-at-right .wp-block-group__inner-container, .wider-at-right--top .wp-block-group__inner-container, .wider-at-left .wp-block-group__inner-container, 
+.wider-at-left--top .wp-block-group__inner-container {
   @include inner-container;
 } 
+
+.wide-inner-container .wp-block-group__inner-container {
+  @include inner-container--wide;
+}
 
 /* Latest posts list block  */
 .wp-block-latest-posts__list {
@@ -109,6 +117,16 @@
 /* CV's About me media & text block */
 .about-me {
   grid-template-columns: 1fr 2fr;
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  .wp-block-media-text__content {
+    margin-top: 2rem;
+    @include tablet-portrait-up {
+      margin-top: 0;
+    }
+  }
 }
 
 /* my custom title block */
@@ -117,7 +135,7 @@
   /* margin: 0 auto;
   width: 60%;
   padding: 4rem 0; */
-  @include inner-container;
+  @include inner-container--wide;
   display: flex;
   justify-content: center;
   align-items: center; 
@@ -136,12 +154,16 @@
   &__text {
    /* @include main-title; */
     margin: 5% 0 0 0; 
-    color: $white;
-    font-family: 'Montserrat', sans-serif;
-  font-weight: extra-bold;
-  font-size: 1.7rem;
     text-align: center;
     text-shadow: 1px 1px black, 1px 1px black, 1px 1px black, 1px 1px black; 
+
+    h1 {
+      font-weight: 900; 
+      font-size: 2.3em;
+      line-height: 1.2;
+      color: $white;
+      font-family: 'Montserrat', sans-serif;
+    }
 
     @include tablet-portrait-up {
       margin: 0 0 0 5%;

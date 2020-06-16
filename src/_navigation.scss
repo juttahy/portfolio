@@ -161,7 +161,7 @@
 
 /* animation to show the menu */ 
 .navigation-checkbox:checked ~ .navigation-background {
-  transform: scale(80);
+  transform: scale(100);
 }
 .navigation-checkbox:checked ~ .navigation-nav {
   opacity: 1;

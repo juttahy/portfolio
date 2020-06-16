@@ -22,3 +22,9 @@ input.wpcf7-submit {
   @include cta-button;
   margin-top: 12px;
 } 
+
+div.wpcf7-mail-sent-ok {
+  border: 2px solid $light-pink;
+  border-radius: 5px;
+  margin-left: 0;
+}

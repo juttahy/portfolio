@@ -22,25 +22,28 @@
   }
 }
 
-/* Tee mixin inner container mobile first eli oletus mobile */
-/* sit käytä screen sizeja eri screen sizeille */ 
+
 
 @mixin inner-container {
   margin: 0 auto;
   width: 95%;
-  /* padding: 2rem 0 5rem 0;*/ 
+  max-width: 720px;
   
   @include tablet-portrait-up {
-    width: 85%;
+    width: 80%;
   }
   @include desktop-up {
     width: 70%;
   }
 }
+@mixin inner-container--wide {
+  @include inner-container; 
+  max-width: 900px;
+}
 
 /* button styles */
 @mixin cta-button {
-  /*background-color: $dark-pink;*/
+  background-color: $dark-pink;
   border: $white solid 1px;
   border-radius: 5px; 
   margin-top: 32px;
@@ -53,7 +56,7 @@
   text-align: center;
   text-decoration: none;
   overflow-wrap: break-word;
-  /*color: $white;*/
+  color: $white;
   &:link, &:visited {
     background-color: $dark-pink;
     color: $white;
@@ -82,7 +85,7 @@
 @mixin wider-at-right-bg {
   background-color: $black;
   color: $white;
-  padding: 3rem 0 5rem 0;
+  padding: 4rem 0 5rem 0;
   position: relative;
   /* z-index: 2; */
   z-index: 3;
@@ -120,7 +123,7 @@
 @mixin wider-at-left-bg {
   background-color: $yellow;
   font-weight: 400;
-  padding: 4rem 0 4rem 0;
+  padding: 6rem 0 6rem 0;
   position: relative;
   z-index: 2;
 
@@ -136,5 +139,12 @@
     bottom: 0;
     transform: skewY(-3deg);
     transform-origin: 100%;
+  }
+}
+
+@mixin wider-at-left-bg--top {
+  @include wider-at-left-bg;
+  &::after {
+    transform: none;
   }
 }
