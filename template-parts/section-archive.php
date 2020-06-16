@@ -11,18 +11,10 @@
       <?php endif;?>
       <div class="archive-container__inner">
 
-        <?php if(has_post_thumbnail()):?>
-          <div class="archive-post-thumbnail">
-            <img src="<?php the_post_thumbnail_url('blog-small');?>" alt="<?php the_title();?>">
-          </div>
-        <?php endif;?>
-
-        <div class="archive-post-text">
-          <h3><?php the_title(); ?></h3>
-          <?php the_excerpt(); ?>
-          <a href="<?php the_permalink(); ?>" class="btn-pink-readmore">Read more</a>
-        </div>
-      
+          <h2><?php the_title(); ?></h2>
+         
+          <?php the_content(); ?>
+                  
       </div>
     </div>  
   <?php endwhile; else: endif; ?>
