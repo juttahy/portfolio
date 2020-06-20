@@ -1,0 +1,11 @@
+.error-image {
+  margin-bottom: 2rem;
+
+  img {
+    width: 300px;
+    @include tablet-portrait-up {
+      width: 500px;
+    }
+  }
+}
+

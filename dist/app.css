@@ -1,4 +1,4 @@
-/*---------------------------------------------------------
+@import url(https://fonts.googleapis.com/css2?family=Knewave&family=Quicksand:wght@300;400;600;700&family=Work+Sans:wght@700;800;900&display=swap);/*---------------------------------------------------------
 Custom Color palettes 
 -----------------------------------------------------*/
 .has-yellow-background-color {
@@ -113,6 +113,7 @@ h1 {
   font-weight: extra-bold;*/
   font-size: 1.8em;
   line-height: 1.2;
+  font-weight: normal;
 }
 @media only screen and (min-width: 768px) {
   h1 {
@@ -157,6 +158,13 @@ a .work-sample-content:hover {
   border: #f14995 solid 6px;
 }
 
+/* clear default button styling from for example iPhones */
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .btn-pink, .btn-pink-readmore {
   background-color: #da2f7c;
   border: #ffffff solid 1px;
@@ -187,6 +195,10 @@ a .work-sample-content:hover {
   padding: 0.4rem 0.8rem;
 }
 
+.center-text {
+  text-align: center;
+}
+
 .center-text-mb {
   text-align: center;
 }
@@ -200,12 +212,15 @@ a .work-sample-content:hover {
   margin: 0 auto;
   width: 95%;
   max-width: 720px;
-  padding: 0 0 3rem 0;
+  padding: 0 0 3.5rem 0;
   /* margin-top: 5%; */
   color: #c69c39;
   font-size: 2.7rem;
   text-align: center;
   text-transform: uppercase;
+  /* @include tablet-portrait-up {
+    padding: 0 0 5rem 0; 
+  } */
 }
 @media only screen and (min-width: 768px) {
   .page-title {
@@ -221,14 +236,25 @@ a .work-sample-content:hover {
   font-size: inherit;
   font-weight: 400;
 }
-@media only screen and (min-width: 768px) {
-  .page-title {
-    padding: 0 0 5rem 0;
-  }
-}
 
 .basic-page {
   padding: 5rem 0 0 0;
+}
+
+.inner-content {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 720px;
+}
+@media only screen and (min-width: 768px) {
+  .inner-content {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .inner-content {
+    width: 70%;
+  }
 }
 
 /* general blocks */
@@ -248,6 +274,7 @@ a .work-sample-content:hover {
   text-decoration: none;
   overflow-wrap: break-word;
   color: #ffffff;
+  margin-top: 0;
 }
 .wp-block-button__link:link, .wp-block-button__link:visited {
   background-color: #da2f7c;
@@ -273,6 +300,8 @@ a .work-sample-content:hover {
   text-decoration: none;
   overflow-wrap: break-word;
   color: #ffffff;
+  margin-top: 0;
+  background-color: #747474;
 }
 .btn-secondary .wp-block-button__link:link, .btn-secondary .wp-block-button__link:visited {
   background-color: #da2f7c;
@@ -452,26 +481,27 @@ a .work-sample-content:hover {
 }
 .wp-block-latest-posts__list li {
   margin: 0.6rem;
-}
-.wp-block-latest-posts__list li .wp-block-latest-posts__featured-image img {
-  opacity: 1;
-  border-radius: 5px;
   width: 300px;
 }
 @media only screen and (min-width: 768px) {
-  .wp-block-latest-posts__list li .wp-block-latest-posts__featured-image img {
+  .wp-block-latest-posts__list li {
     width: 200px;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .wp-block-latest-posts__list li .wp-block-latest-posts__featured-image img {
+  .wp-block-latest-posts__list li {
     width: 250px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  .wp-block-latest-posts__list li .wp-block-latest-posts__featured-image img {
+  .wp-block-latest-posts__list li {
     width: 300px;
   }
+}
+.wp-block-latest-posts__list li .wp-block-latest-posts__featured-image img {
+  opacity: 1;
+  border-radius: 5px;
+  width: 100%;
 }
 .wp-block-latest-posts__list li a {
   color: #191919;
@@ -488,16 +518,23 @@ a .work-sample-content:hover {
 
 /* cover image block */
 .wp-block-cover {
-  height: 450px;
-  background-attachment: fixed;
-  background-position: center;
+  height: 350px;
+  /* background-size: initial; */
+  background-size: 200%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: center center;
+}
+@media only screen and (min-width: 768px) {
+  .wp-block-cover {
+    height: 450px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 /* custom styling for 2-column layout */
 .wp-block-columns {
-  /* background-color: $burgundy; */
   background-color: #da2f7c;
   color: #ffffff;
   padding: 2rem;
@@ -520,11 +557,17 @@ a .work-sample-content:hover {
   }
 }
 
+/* image gallery block styles */
+.blocks-gallery-grid {
+  margin-bottom: 2rem;
+}
+
+.blocks-gallery-item img {
+  border: 1px #747474 solid;
+}
+
 /* my custom title block */
 .wp-block-jhy-custom-title {
-  /* margin: 0 auto;
-  width: 60%;
-  padding: 4rem 0; */
   margin: 0 auto;
   width: 95%;
   max-width: 720px;
@@ -548,7 +591,6 @@ a .work-sample-content:hover {
 @media only screen and (min-width: 768px) {
   .wp-block-jhy-custom-title {
     flex-direction: row;
-    /* align-items: flex-start;*/
   }
 }
 .wp-block-jhy-custom-title__img img {
@@ -556,17 +598,23 @@ a .work-sample-content:hover {
   border-radius: 100%;
 }
 .wp-block-jhy-custom-title__text {
-  /* @include main-title; */
   margin: 5% 0 0 0;
   text-align: center;
   text-shadow: 1px 1px black, 1px 1px black, 1px 1px black, 1px 1px black;
 }
 .wp-block-jhy-custom-title__text h1 {
   font-weight: 900;
-  font-size: 2.3em;
+  font-size: 1.7em;
   line-height: 1.2;
   color: #ffffff;
-  font-family: "Montserrat", sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: "Work Sans", sans-serif;
+}
+@media only screen and (min-width: 768px) {
+  .wp-block-jhy-custom-title__text h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+  }
 }
 @media only screen and (min-width: 768px) {
   .wp-block-jhy-custom-title__text {
@@ -586,7 +634,6 @@ header {
 }
 
 .site-name {
-  color: pink;
   text-align: center;
   width: 100%;
   font-family: "Knewave", cursive;
@@ -596,6 +643,7 @@ header {
 .site-name a {
   color: #343334;
   text-decoration: none;
+  /* font-family: 'Knewave', cursive; */
 }
 @media only screen and (min-width: 400px) {
   .site-name {
@@ -690,7 +738,7 @@ header {
   text-align: center;
 }
 .navigation-list .menu-item {
-  margin: 1.6rem;
+  margin: 2rem;
 }
 .navigation-list .menu-item:hover {
   cursor: pointer;
@@ -706,10 +754,10 @@ header {
 .navigation-list .menu-item a:link, .navigation-list .menu-item a:visited {
   display: inline-block;
   padding: 0;
-  font-size: 1.6rem;
+  font-size: 1.6em;
+  line-height: 1;
   text-transform: uppercase;
   color: #ffffff;
-  /* color: #4a4a4a; */
   font-weight: 400;
   transition: all 0.2s ease-in-out;
   position: relative;
@@ -724,64 +772,13 @@ header {
   transition: all 0.2s ease-in-out;
   transition-duration: 0.45s;
   opacity: 0;
-  background-color: #f82eae;
+  background-color: #da2f7c;
 }
 .navigation-list .menu-item a::before {
   left: 50%;
 }
 .navigation-list .menu-item a::after {
   right: 50%;
-}
-
-.navigation-item {
-  margin: 1.6rem;
-}
-
-.navigation-link:link, .navigation-link:visited {
-  display: inline-block;
-  padding: 0;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  color: #ffffff;
-  /* color: #4a4a4a; */
-  font-weight: 400;
-  transition: all 0.2s ease-in-out;
-  position: relative;
-}
-
-.navigation-link::before, .navigation-link::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  width: 0px;
-  height: 4px;
-  margin: 4px 0 0;
-  transition: all 0.2s ease-in-out;
-  transition-duration: 0.45s;
-  opacity: 0;
-  background-color: #e082b9;
-}
-
-.navigation-link::before {
-  left: 50%;
-}
-
-.navigation-link::after {
-  right: 50%;
-}
-
-.navigation-item:hover {
-  cursor: pointer;
-}
-
-.navigation-item:hover .navigation-link::before {
-  width: 50%;
-  opacity: 1;
-}
-
-.navigation-item:hover .navigation-link::after {
-  width: 50%;
-  opacity: 1;
 }
 
 /* animation to show the menu */
@@ -1232,4 +1229,16 @@ div.wpcf7-mail-sent-ok {
   border: 2px solid #e082b9;
   border-radius: 5px;
   margin-left: 0;
+}
+
+.error-image {
+  margin-bottom: 2rem;
+}
+.error-image img {
+  width: 300px;
+}
+@media only screen and (min-width: 768px) {
+  .error-image img {
+    width: 500px;
+  }
 }
