@@ -2,7 +2,9 @@
 
 function scripts() {
   
-  wp_enqueue_style('wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Knewave&family=Montserrat:wght@700;800;900&family=Quicksand:wght@300;400;600;700&display=swap', false); 
+  /* wp_enqueue_style('wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Knewave&family=Montserrat:wght@700;800;900&family=Quicksand:wght@300;400;600;700&display=swap', false);*/ 
+  wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css2?family=Knewave&family=Quicksand:wght@300;400;600;700&family=Work+Sans:wght@900&display=swap', false);
+  wp_enqueue_style( 'googleFonts');
 
   wp_register_style('style', get_template_directory_uri() . '/style.css', array(), false, 'all');
   wp_enqueue_style('style');
@@ -16,6 +18,19 @@ function scripts() {
   wp_enqueue_script('app');
 } 
 add_action('wp_enqueue_scripts','scripts');
+
+/* Add Google fonts */
+
+/* function portfolio_add_google_fonts() {
+  wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css2?family=Knewave&family=Quicksand:wght@300;400;600;700&family=Work+Sans:wght@900&display=swap', false);
+  wp_enqueue_style( 'googleFonts');
+ }
+ add_action( 'wp_enqueue_scripts', 'portfolio_add_google_fonts' ); */
+
+/*function wpb_add_google_fonts() {
+  wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Knewave&family=Quicksand:wght@300;400;600;700&family=Work+Sans:wght@900&display=swap', false );
+}
+add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );*/
 
 /* function load_stylesheets() {
 
