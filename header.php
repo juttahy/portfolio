@@ -16,7 +16,7 @@
     
     <header>
       <div class="site-name">
-        <a href="#">Jutta Hyrskylahti</a>
+        <a href="<?php echo get_home_url(); ?>">Jutta Hyrskylahti</a>
       </div>
       <div class="menu">
         <div class="navigation">

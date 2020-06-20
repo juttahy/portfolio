@@ -4,7 +4,8 @@
   <div class="blog-post__inner">
     <div class="page-title">
       <h1><?php the_title(); ?></h1>  
-    </div>  
+    </div> 
+    <div>
     <?php the_content(); ?>
 
       <?php 
@@ -17,8 +18,10 @@
         </a>
 
       <?php endforeach; endif;?>
-    </div>
+    
+    </div> 
   </div>
+</div>
 
 <?php endwhile; else: endif; ?>
 
