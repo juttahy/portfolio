@@ -2,7 +2,6 @@
 
 function scripts() {
   
-  /* wp_enqueue_style('wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Knewave&family=Montserrat:wght@700;800;900&family=Quicksand:wght@300;400;600;700&display=swap', false);*/ 
   wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css2?family=Knewave&family=Quicksand:wght@300;400;600;700&family=Work+Sans:wght@900&display=swap', false);
   wp_enqueue_style( 'googleFonts');
 
@@ -18,37 +17,6 @@ function scripts() {
   wp_enqueue_script('app');
 } 
 add_action('wp_enqueue_scripts','scripts');
-
-/* Add Google fonts */
-
-/* function portfolio_add_google_fonts() {
-  wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css2?family=Knewave&family=Quicksand:wght@300;400;600;700&family=Work+Sans:wght@900&display=swap', false);
-  wp_enqueue_style( 'googleFonts');
- }
- add_action( 'wp_enqueue_scripts', 'portfolio_add_google_fonts' ); */
-
-/*function wpb_add_google_fonts() {
-  wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Knewave&family=Quicksand:wght@300;400;600;700&family=Work+Sans:wght@900&display=swap', false );
-}
-add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );*/
-
-/* function load_stylesheets() {
-
-  wp_register_style('style', get_template_directory_uri() . '/style.css', array(), false, 'all');
-  wp_enqueue_style('style');
-
-}
-add_action('wp_enqueue_scripts', 'load_stylesheets');
-
-
-function load_js() {
-
-  wp_register_script('customjs', get_template_directory_uri() . '/js/scripts.js', '', 1, true);
-  wp_enqueue_script('customjs');
-
-}
-add_action('wp_enqueue_scripts', 'load_js'); */ 
-
 
 
 /* enable menus in site */
@@ -156,10 +124,9 @@ function portfolio_setup_theme_supported_features() {
 add_action( 'after_setup_theme', 'portfolio_setup_theme_supported_features' );
 
 
-
-/* custom image sizes */
+/* custom image size for blog excerpts */
 add_image_size('blog-small', 300, 200, true);
-add_image_size('blog-large', 800, 400, false);
+
 
 /**
  * Custom Gutenberg Blocks

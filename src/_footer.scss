@@ -1,8 +1,6 @@
 .footer-background {
-  background-color: #3e402f;
-  color: #fff;
-  /* position: relative;
-  z-index: 1; */
+  background-color: $green;
+  color: $white;
 }
 
 .footer-container {
@@ -27,9 +25,9 @@
     margin-bottom: 16px;
   }
   a {
-    color: #ffffff;
+    color: $white;
     &:hover, &:focus {
-      color: #e082b9;
+      color: $light-pink;
     }
   }
 
@@ -47,7 +45,7 @@
   
   @include tablet-portrait-up {
     border: none;
-    border-left: #e082b9 solid 2px;
+    border-left: $light-pink solid 2px;
     padding-left: 4%;
   }
 }
@@ -55,7 +53,7 @@
 .footer-content-two {
   margin-top: 8%;
   padding-top: 6%;
-  border-top: #e082b9 solid 2px;
+  border-top: $light-pink solid 2px;
 
   @include tablet-portrait-up {
     border: none;

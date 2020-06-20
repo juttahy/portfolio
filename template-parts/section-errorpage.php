@@ -1,3 +1,5 @@
+<!-- 404 error page template -->
+
 <div class="wider-at-right--top">
   <div class="inner-content center-text">
     <h1 class="page-title"><?php _e( 'Sorry, but the content was not found', 'portfolio' ); ?></h1>

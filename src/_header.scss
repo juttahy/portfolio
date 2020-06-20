@@ -18,28 +18,11 @@ header {
   a {
     color: $dark-grey;
     text-decoration: none;
-    /* font-family: 'Knewave', cursive; */
   }
   @include phone-landscape-up {
     padding: 1rem;
   }
   @include tablet-portrait-up {
     font-size: 4rem;
-  }
-}
-.site-name img {
-  width: 100px;
-
-  @include phone-landscape-up {
-    width: 200px;
-  }
-  @include tablet-portrait-up {
-    width: 300px;
-  }
-  @include tablet-landscape-up {
-    width: 300px;
-  }
-  @include desktop-up {
-    width: 100px;
   }
 }

@@ -105,7 +105,6 @@
 
 .wp-block-cover {
   height: 350px;
-  /* background-size: initial; */
   background-size: 200%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -130,7 +129,7 @@
   border-radius: 5px;
 }
 
-/* CV's About me media & text block */
+/* media & text block */
 .about-me {
   grid-template-columns: 1fr 2fr;
   h2 {
@@ -183,7 +182,6 @@
       font-size: 1.7em;
       line-height: 1.2;
       color: $white;
-      /* font-family: 'Montserrat', sans-serif; */
       font-family: 'Work Sans', sans-serif;
       @include tablet-portrait-up {
         font-size: 2.2em;
