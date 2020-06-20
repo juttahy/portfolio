@@ -1,3 +1,5 @@
+ @import url('https://fonts.googleapis.com/css2?family=Knewave&family=Quicksand:wght@300;400;600;700&family=Work+Sans:wght@700;800;900&display=swap'); 
+
 * {
   margin: 0;
   padding: 0;
@@ -50,6 +52,7 @@ h1 {
   font-weight: extra-bold;*/
   font-size: 1.8em;
   line-height: 1.2;
+  font-weight: normal;
 
   @include tablet-portrait-up {
     font-size: 2.1em;
@@ -93,6 +96,13 @@ a .work-sample-content:hover {
   border: #f14995 solid 6px;
 }
 
+/* clear default button styling from for example iPhones */
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .btn-pink, .btn-pink-readmore {
   @include cta-button;
 }
@@ -101,6 +111,9 @@ a .work-sample-content:hover {
   padding: 0.4rem 0.8rem;
 }
 
+.center-text {
+  text-align: center;
+}
 
 .center-text-mb {
   text-align: center;
@@ -111,14 +124,19 @@ a .work-sample-content:hover {
 
 .page-title {
   @include inner-container;
-  padding: 0 0 3rem 0;
+  padding: 0 0 3.5rem 0;
   @include main-title;
   
-  @include tablet-portrait-up {
+  /* @include tablet-portrait-up {
     padding: 0 0 5rem 0; 
-  }
+  } */
 }
 
 .basic-page {
   padding: 5rem 0 0 0;
 }
+
+.inner-content {
+  @include inner-container;
+}
+

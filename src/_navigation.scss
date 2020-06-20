@@ -4,7 +4,7 @@
 
 .navigation-button {
   /* background-color: #191919; */
-  background-color: #ffffff;
+  background-color: $white;
   height: 3.5rem;
   width: 3.5rem;
   border-radius: 50%;
@@ -58,7 +58,7 @@
   text-align: center;
 
   .menu-item {
-    margin: 1.6rem;
+    margin: 2rem;
     &:hover {
       cursor: pointer;
 
@@ -78,10 +78,10 @@
       &:link, &:visited {
         display: inline-block;
         padding: 0;
-        font-size: 1.6rem;
+        font-size: 1.6em;
+        line-height: 1;
         text-transform: uppercase;
         color: $white;
-        /* color: #4a4a4a; */
         font-weight: 400;
         transition: all 0.2s ease-in-out;
         position: relative;
@@ -96,7 +96,7 @@
         transition: all 0.2s ease-in-out;
         transition-duration: 0.45s;
         opacity: 0;
-        background-color: $medium-pink;
+        background-color: $dark-pink;
       }
       &::before {
         left: 50%;
@@ -111,53 +111,6 @@
 }
 
 
-
-.navigation-item {
-  margin: 1.6rem;
-}
-
-.navigation-link:link, .navigation-link:visited {
-  display: inline-block;
-  padding: 0;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  color: #ffffff;
-  /* color: #4a4a4a; */
-  font-weight: 400;
-  transition: all 0.2s ease-in-out;
-  position: relative;
-}
-
-.navigation-link::before, .navigation-link::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  width: 0px;
-  height: 4px;
-  margin: 4px 0 0;
-  transition: all 0.2s ease-in-out;
-  transition-duration: 0.45s;
-  opacity: 0;
-  background-color: #e082b9;
-}
-.navigation-link::before {
-  left: 50%;
-}
-.navigation-link::after {
-  right: 50%;
-}
-
-.navigation-item:hover {
-  cursor: pointer;
-}
-.navigation-item:hover .navigation-link::before {
-  width: 50%;
-  opacity: 1;
-}
-.navigation-item:hover .navigation-link::after {
-  width: 50%;
-  opacity: 1;
-}
 
 /* animation to show the menu */ 
 .navigation-checkbox:checked ~ .navigation-background {

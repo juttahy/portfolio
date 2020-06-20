@@ -1,12 +1,16 @@
 /* general blocks */
 
 /* buttons */
+
 .wp-block-button__link {
   @include cta-button;
+  margin-top: 0;
 }
 .btn-secondary {
   .wp-block-button__link {
     @include cta-button;
+    margin-top: 0;
+    background-color: $grey;
     &:link, &:visited {
       background-color: $grey;
     }
@@ -58,22 +62,23 @@
 
   li {
     margin: 0.6rem;
+    width: 300px;
+        
+    @include tablet-portrait-up {
+      width: 200px;
+    }
+    @include tablet-landscape-up {
+      width: 250px;
+    }
+    @include desktop-up {
+      width: 300px;
+    }
     
     .wp-block-latest-posts__featured-image {
       img {
         opacity: 1;
         border-radius: 5px;
-        width: 300px;
-        
-        @include tablet-portrait-up {
-          width: 200px;
-        }
-        @include tablet-landscape-up {
-          width: 250px;
-        }
-        @include desktop-up {
-          width: 300px;
-        }
+        width: 100%;
       }
     } 
     a {
@@ -97,17 +102,28 @@
 }
 
 /* cover image block */
+
 .wp-block-cover {
-  height: 450px;
-  background-attachment: fixed;
-  background-position: center;
+  height: 350px;
+  /* background-size: initial; */
+  background-size: 200%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: center center;
+
+  @include tablet-portrait-up {
+    height: 450px;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
 }
+
 
 /* custom styling for 2-column layout */
 .wp-block-columns {
-  /* background-color: $burgundy; */
   background-color: $dark-pink;
   color: $white;
   padding: 2rem;
@@ -129,12 +145,19 @@
   }
 }
 
+/* image gallery block styles */
+.blocks-gallery-grid {
+  margin-bottom: 2rem;
+}
+.blocks-gallery-item {
+  img {
+    border: 1px $grey solid;
+  }
+}
+
 /* my custom title block */
 
 .wp-block-jhy-custom-title {
-  /* margin: 0 auto;
-  width: 60%;
-  padding: 4rem 0; */
   @include inner-container--wide;
   display: flex;
   justify-content: center;
@@ -144,7 +167,6 @@
 
   @include tablet-portrait-up {
     flex-direction: row;
-    /* align-items: flex-start;*/
   }
 
   &__img img {
@@ -152,17 +174,21 @@
     border-radius: 100%;
   }
   &__text {
-   /* @include main-title; */
     margin: 5% 0 0 0; 
     text-align: center;
     text-shadow: 1px 1px black, 1px 1px black, 1px 1px black, 1px 1px black; 
 
     h1 {
       font-weight: 900; 
-      font-size: 2.3em;
+      font-size: 1.7em;
       line-height: 1.2;
       color: $white;
-      font-family: 'Montserrat', sans-serif;
+      /* font-family: 'Montserrat', sans-serif; */
+      font-family: 'Work Sans', sans-serif;
+      @include tablet-portrait-up {
+        font-size: 2.2em;
+        font-weight: 700;
+      }
     }
 
     @include tablet-portrait-up {
