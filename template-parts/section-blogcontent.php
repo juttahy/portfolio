@@ -33,7 +33,7 @@ if ( is_single()) {
   $categories = get_the_category();
   if ($categories) {
     foreach ($categories as $category) {
-      // echo "<pre>"; print_r($category); echo "</pre>";
+      
       $cat = $category->cat_ID;
       $args=array(
         'cat' => $cat,   
@@ -53,7 +53,9 @@ if ( is_single()) {
           <div class="blog-post--links__inner__excerpt">
             <?php if(has_post_thumbnail()):?>
             <div class="blog-excerpt-thumbnail">
-              <img src="<?php the_post_thumbnail_url('blog-small');?>" alt="<?php the_title();?>">
+              <a href="<?php the_permalink() ?>">   
+                <img src="<?php the_post_thumbnail_url('blog-small');?>" alt="<?php the_title();?>">
+              </a>
             </div>
           <?php endif;?>
           

@@ -24,6 +24,17 @@
   }
 }
 
+.blog-excerpt-thumbnail {
+  img {
+    @include image-link;
+  }
+  &:hover {
+    img {
+      @include image-link-hover;
+    }
+  }
+}
+
 .blog-excerpt-text {
   @include tablet-portrait-up { 
     margin-left: 2rem;
