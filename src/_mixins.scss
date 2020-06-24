@@ -147,3 +147,14 @@
     font-weight: 400;
   }
 }
+
+/* Style for image links */
+@mixin image-link {
+  opacity: 1;
+  border: 1px solid $grey;
+}
+
+@mixin image-link-hover {
+  opacity: 0.8;
+  border: 1px solid $dark-pink;
+}

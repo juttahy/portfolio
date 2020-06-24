@@ -15,6 +15,10 @@ html {
   background-position: top center;
 
   @include tablet-portrait-up {
+    background-size: 200%;
+  }
+
+  @include desktop-up {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
